@@ -1,0 +1,281 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: #405a45;
+  background-color: whitesmoke;
+}
+
+body {
+  min-width: 350px;
+}
+
+h1, p, h2, body {
+  margin: 0
+}
+
+h1, h2 {
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 2.5em;
+  line-height: 1.1;
+  letter-spacing: .2em;
+}
+
+h2 {
+  font-size: 1.85em;
+  line-height: 1.1;
+  letter-spacing: .15em;
+  font-weight: 400;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  margin: auto;
+
+}
+
+/* Styling the nav */
+
+nav {
+  display: none;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+
+li {
+  list-style: none;
+  padding-left: 1.5em;
+  cursor: pointer;
+}
+
+
+/* styling the hero */
+
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url(../public/north_yorkshire.png);
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 100vh; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: whitesmoke;
+}
+
+.link-explore {
+  border: 1px solid whitesmoke;
+  padding: .2em 1.5em;
+  margin-top: 1em;
+  margin-bottom: 3em;
+  cursor: pointer;
+}
+
+.arrow {
+  padding-left: .5em;
+}
+
+
+/* Syling the cards */
+
+
+.cards-container {
+  width: 90%;
+  max-width: 1000px;
+  height: 100vh;
+  padding: 1.5em 0;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  grid-template-areas: 
+  "discover ."
+  ". title"
+  "image image"
+  "location location"
+  "description description"
+  ;
+}
+
+.cards-img {
+  width: 100%;
+  grid-area: image;
+  padding-top: 1em;
+}
+
+.discover {
+  grid-area: discover;
+}
+
+.cards-title {
+  grid-area: title;
+  padding-top: .3em;
+  text-align: right;
+}
+
+.cards-location {
+  grid-area: location;
+  padding-top: 1em;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+}
+
+.fa-location-dot {
+  padding-right: .2em;
+}
+
+.cards-location-Url {
+  text-transform: lowercase;
+  padding-left: 1em;
+  letter-spacing: normal;
+}
+
+.cards-description {
+  grid-area: description;
+  padding-top: 1em;
+}
+
+.cards-location,
+.cards-description {
+  font-size: .85em;
+  line-height: 1.7;
+}
+
+.cards-background-color:nth-child(even) {
+  background-color: #edede9;
+}
+
+
+/* Media queries */
+
+@media (min-width: 600px) {
+  nav {
+    display: flex;
+    justify-content: end;
+    color: whitesmoke;
+    position: absolute;
+    left: 55%;
+  }
+
+  h1 {
+    font-size: 3.5em;
+  }
+
+  .cards-container {
+    height: auto;
+  }
+}
+
+@media (min-width: 800px) {
+  nav {
+    left: 66%;
+  }
+
+  h1 {
+    font-size: 5em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  .cards-container {
+    width: 90%;
+    height: auto;
+    padding: 1.5em 0;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 1em;
+    grid-template-rows: 1fr 1fr 2fr 6fr;
+    grid-template-areas: 
+    "image discover"
+    "image title"
+    "image location"
+    "image description"
+    ;
+    align-items: center;
+  }
+
+  .cards-img {
+    width: 100%;
+    padding-top: 0;
+  }
+  
+  .cards-title {
+    text-align: right;
+    padding-top: 0;
+  }
+  
+  .cards-location {
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    padding-top: 0;
+    align-self: self-end;
+  }
+  
+  .cards-description {
+    padding-top: 0;
+  }
+
+  .cards-location-Url {
+    display: block;
+  }
+  
+  .cards-location,
+  .cards-description {
+    font-size: .85em;
+    line-height: 1.7;
+  }
+
+}
+
+@media (min-width: 900px) {
+  h1 {
+    font-size:6em;
+  }
+  
+  nav {
+    left: 70%;
+  }
+  
+  .hero {
+    height: 100vh; /* You must set a specified height */
+  }
+
+  h2 {
+    font-size: 1.75em;
+  }
+
+  .cards-location,
+  .cards-description {
+    font-size: .9em;
+    line-height: 1.7;
+  }
+}
+
+@media (min-width: 1000px) {
+
+  h2 {
+    font-size: 1.9em;
+  }
+
+  .cards-location,
+  .cards-description {
+    font-size: 1em;
+    line-height: 1.7;
+  }
+}
